@@ -41,20 +41,24 @@ const App: React.FC = () => {
 
   const playSfx = (type: 'correct' | 'wrong' | 'click') => {
     try {
+        let sound: HTMLAudioElement | null = null;
+        
         if (type === 'correct' && sfxCorrectRef.current) {
-            sfxCorrectRef.current.currentTime = 0;
-            sfxCorrectRef.current.play().catch(() => {});
+            sound = sfxCorrectRef.current.cloneNode() as HTMLAudioElement;
+            sound.volume = 0.4;
+        } else if (type === 'wrong' && sfxWrongRef.current) {
+            sound = sfxWrongRef.current.cloneNode() as HTMLAudioElement;
+            sound.volume = 0.3;
+        } else if (type === 'click' && sfxClickRef.current) {
+            sound = sfxClickRef.current.cloneNode() as HTMLAudioElement;
+            sound.volume = 0.3;
         }
-        if (type === 'wrong' && sfxWrongRef.current) {
-            sfxWrongRef.current.currentTime = 0;
-            sfxWrongRef.current.play().catch(() => {});
-        }
-        if (type === 'click' && sfxClickRef.current) {
-            sfxClickRef.current.currentTime = 0;
-            sfxClickRef.current.play().catch(() => {});
+
+        if (sound) {
+            sound.play().catch(e => console.error("Error playing SFX:", e));
         }
     } catch (e) {
-        console.error("Error playing SFX", e);
+        console.error("Error in playSfx:", e);
     }
   };
 
