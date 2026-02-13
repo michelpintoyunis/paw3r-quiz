@@ -37,7 +37,7 @@ export const QuizCard: React.FC<QuizCardProps> = ({ question, onOptionSelect, se
             if (selectedOption === index) {
               buttonClass += "bg-black text-white border-black";
             } else {
-              buttonClass += "bg-white text-black border-gray-300 md:hover:border-black md:hover:bg-black md:hover:text-white active:bg-gray-100 shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] hover:shadow-none hover:translate-x-[3px] hover:translate-y-[3px]";
+              buttonClass += "bg-white text-black border-gray-300 md:hover:border-black md:hover:bg-black md:hover:text-white active:bg-gray-100 shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] md:hover:shadow-none md:hover:translate-x-[3px] md:hover:translate-y-[3px] active:shadow-none active:translate-x-[3px] active:translate-y-[3px]";
             }
           }
 
