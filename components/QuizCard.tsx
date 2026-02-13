@@ -44,7 +44,10 @@ export const QuizCard: React.FC<QuizCardProps> = ({ question, onOptionSelect, se
           return (
             <button
               key={index}
-              onClick={() => !showResult && onOptionSelect(index)}
+              onClick={(e) => {
+                e.currentTarget.blur();
+                if (!showResult) onOptionSelect(index);
+              }}
               disabled={showResult}
               className={buttonClass}
             >
