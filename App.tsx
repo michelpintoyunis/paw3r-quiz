@@ -129,7 +129,7 @@ const App: React.FC = () => {
                 {/* GRUPO VISUAL (Gorila + Logo) */}
                 <div className="flex flex-col items-center justify-center animate-scale-up">
                     <div className="mb-8 landscape:mb-6 p-6 landscape:p-4 border-[6px] border-black rounded-full bg-white shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] transition-transform hover:scale-105 duration-500">
-                        <UgoDisplay className="w-32 h-32 md:w-56 md:h-56 landscape:w-40 landscape:h-40" />
+                        <UgoDisplay className="w-20 h-20 md:w-40 md:h-40 landscape:w-28 landscape:h-28" />
                     </div>
                     
                     {/* LOGO PAW3R */}
