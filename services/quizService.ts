@@ -146,7 +146,3 @@ const PAW3R_QUESTIONS: Question[] = [
 export const generateQuestions = async (): Promise<Question[]> => {
   return Promise.resolve(PAW3R_QUESTIONS);
 };
-
-export const generateUgoPixelArt = async (): Promise<string | null> => {
-  return null; 
-};

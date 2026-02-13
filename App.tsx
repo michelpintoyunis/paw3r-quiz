@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { GameState, Question } from './types';
-import { generateQuestions } from './services/geminiService';
+import { generateQuestions } from './services/quizService';
 import { UgoDisplay } from './components/UgoDisplay';
 import { QuizCard } from './components/QuizCard';
 
