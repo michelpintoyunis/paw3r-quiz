@@ -1,7 +1,7 @@
 import React from 'react';
 
 // URL de la imagen proporcionada
-const UGO_IMAGE_URL = "https://pbs.twimg.com/profile_images/1124423554492194823/rc2M-upQ_400x400.jpg";
+const UGO_IMAGE_URL = "http://cdn.shopify.com/s/files/1/0165/3941/8688/files/ugo-pag-web-_2.gif?v=1695402416";
 
 interface UgoDisplayProps {
   className?: string; 
