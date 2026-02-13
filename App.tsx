@@ -268,7 +268,7 @@ const App: React.FC = () => {
                 />
 
                 <div>
-                    <h2 className="text-xl md:text-3xl font-bold uppercase tracking-widest mb-4 text-gray-400">Entrenamiento Finalizado</h2>
+                    <h2 className="text-xl md:text-3xl font-bold uppercase tracking-widest mb-4 text-gray-400">Reto Completado</h2>
                     <div className="text-7xl md:text-9xl font-black mb-2 text-white tracking-tighter drop-shadow-lg">{score}</div>
                     <p className="text-green-400 font-bold uppercase tracking-[0.2em] text-sm">Aciertos Totales</p>
                 </div>

@@ -143,6 +143,33 @@ const PAW3R_QUESTIONS: Question[] = [
   }
 ];
 
+// Función auxiliar para barajar array (Fisher-Yates)
+const shuffleArray = <T>(array: T[]) => {
+  const shuffled = [...array];
+  for (let i = shuffled.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+  }
+  return shuffled;
+};
+
 export const generateQuestions = async (): Promise<Question[]> => {
-  return Promise.resolve(PAW3R_QUESTIONS);
+  const shuffledQuestions = PAW3R_QUESTIONS.map(q => {
+      // Guardar el texto de la respuesta correcta original
+      const correctOptionText = q.options[q.correctAnswer];
+      
+      // Barajar las opciones
+      const shuffledOptions = shuffleArray(q.options);
+      
+      // Encontrar el nuevo índice de la respuesta correcta
+      const newCorrectIndex = shuffledOptions.indexOf(correctOptionText);
+      
+      return {
+          ...q,
+          options: shuffledOptions,
+          correctAnswer: newCorrectIndex
+      };
+  });
+
+  return Promise.resolve(shuffledQuestions);
 };
